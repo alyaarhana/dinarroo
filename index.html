@@ -12,10 +12,10 @@
 	<div id="templatemo_banner">
     	<div id="templatemo_menu">
         	<ul>
-                <li><a href=class="current">Beranda</a></li>
-                <li><a href=Login</a></li>
-                <li><a href=Tentang</a></li>
-				<li><p id="userInfo">Belum Login</p>
+                <li><a href="index.html" class="current">Beranda</a></li>
+                <li><a href="login.html" id="nav-login">Login</a></li>
+                <li><a href="#" id="nav-logout" style="display:none;">Logout</a></li>
+                <li><a href="#">Tentang</a></li>
             </ul>
         </div>
     
@@ -31,7 +31,7 @@
         <div class="section_w480">
         <h2>Hai! Aku Dinarroo</h2>
         
-            <img class="image_wrapper fr_image" src="images/templatemo_image_01.jpg" alt="image" />
+            <img class="image_wrapper fr_image" src="images/top.jpeg" alt="image" />
             <p>Kenalin, namaku<a href="#"> Dinarroo</a> tapi orang-orang biasanya manggil aku Naru. Aku mempunyai bulu lebat yang halus dan berwarna oren kekuningan.</p>
             <p>Kata banyak orang, kucing oren itu biasanya pasti nakal, tapi aku beda! Aku termasuk kucing yang penurut, tidak pernah berkelahi, dan kalem. Aku jarang bersuara, kecuali saat lapar itupun suaraku lembut banget. Kalau minta makan, aku biasanya mendekat dan mencari perhatian.</p>
         
@@ -43,15 +43,14 @@
             <h2>Kehidupan Narroo</h2>
             
             <h4><a href="#">Hal yang Aku sukai</a></h4>
-        <img class="image_wrapper fl_image" src="images/templatemo_image_03.jpg" alt="image" />
+        <img class="image_wrapper fl_image" src="images/mid.jpeg" alt="image" />
             
             <p>Aku paling suka makan snack basah, itu makanan kesukaanku! Untuk perawatan, aku mandi seminggu sekali supaya tetap bersih dan sehat. Setelah mandi aku juga diberi minyak wangi supaya selalu harum dan membuat siapapun nyaman denganku. Kemudian aku juga suka tidur di dekat pemilikku apalagi di atas perutnya.</p>
             
             <div class="cleaner_h20"></div>
             
             <h4><a href="#">Kegiatanku Sehari-hari</a></h4>
-    <img class="image_wrapper fl_image" src="images/templatemo_image_02.jpg" alt="image" />
-            
+    <img class="image_wrapper fl_image" src="images/kandang.jpeg" alt="image" />
             <p>Kalau aku lagi sehat, aku aktif banget. Suka lari-larian dan bermain dengan kucing lain, bahkan kadang iseng mainin ekor mereka. Tapi kalau lagi sakit, aku jadi lemes dan lebih banyak diam. Walaupun begitu, aku kucing yang mandiri karena udah hafal tempat makan, minum, dan selalu pup ditempatnya.</p>
         </div>
 
@@ -75,6 +74,7 @@
                 <h4><a href="#">Suka Makan</a></h4>
               <p>Setiap pagi aku membangunkan pemilikku untuk memberiku makanan dan aku suka banget makan snack basah.</p>
                 
+              <img id="side_image"src="images/image.png">
                </div>
         </div>
     
@@ -90,5 +90,26 @@
     <div class="cleaner"></div>    
 
 </div> <!-- end of content -->
+<script type="text/javascript">
+function updateNav() {
+    var logged = localStorage.getItem('loggedIn') === 'true';
+    var loginLink = document.getElementById('nav-login');
+    var logoutLink = document.getElementById('nav-logout');
+    if (loginLink) {
+        loginLink.style.display = logged ? 'none' : 'inline-block';
+    }
+    if (logoutLink) {
+        logoutLink.style.display = logged ? 'inline-block' : 'none';
+        if (logged) {
+            logoutLink.onclick = function(event) {
+                event.preventDefault();
+                localStorage.removeItem('loggedIn');
+                window.location.href = 'index.html';
+            };
+        }
+    }
+}
+updateNav();
+</script>
 </body>
 </html>
