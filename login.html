@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Login - Dinarroo embull</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="templatemo_banner_wrapper">
+	<div id="templatemo_banner">
+    	<div id="templatemo_menu">
+        	<ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="login.html" id="nav-login">Login</a></li>
+                <li><a href="#" id="nav-logout" style="display:none;">Logout</a></li>
+                <li><a href="#">Tentang</a></li>
+            </ul>
+        </div>
+    </div> 
+</div>\
+
+<div id="templatemo_content_wrapper">
+<div id="templatemo_content">
+
+    <div id="main_column">
+    <div class="content_top"></div>
+        <div class="section_w480">
+        <h2>Silahkan Login untuk melanjutkan</h2>
+            <div class="login_box">
+                <form class="login_form" action="#" method="post" onsubmit="return loginSimulation();">
+                    <label>Nama Pengguna</label>
+                    <input type="text" id="username" name="username" placeholder="Masukkan username..." />
+                    <label>Kata Sandi</label>
+                    <input type="password" id="password" name="password" placeholder="Masukkan kata sandi..." />
+                    <button type="submit">Masuk</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="cleaner"></div>
+    <div class="content_bottom"></div>
+    </div> 
+
+    <div id="templatemo_footer">
+        16 April 2026 oleh Melinda Aliya Rohana
+      <div class="cleaner_h20"></div>
+    </div>
+    <div class="cleaner"></div>
+
+</div> 
+</div> 
+<script type="text/javascript">
+function loginSimulation() {
+    localStorage.setItem('loggedIn', 'true');
+    window.location.href = 'index.html';
+    return false;
+}
+function updateNav() {
+    var logged = localStorage.getItem('loggedIn') === 'true';
+    var loginLink = document.getElementById('nav-login');
+    var logoutLink = document.getElementById('nav-logout');
+    if (loginLink) {
+        loginLink.style.display = logged ? 'none' : 'inline-block';
+    }
+    if (logoutLink) {
+        logoutLink.style.display = logged ? 'inline-block' : 'none';
+        if (logged) {
+            logoutLink.onclick = function(event) {
+                event.preventDefault();
+                localStorage.removeItem('loggedIn');
+                window.location.href = 'index.html';
+            };
+        }
+    }
+}
+updateNav();
+</script>
+</body>
+</html>
