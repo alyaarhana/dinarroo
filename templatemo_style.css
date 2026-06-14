@@ -63,6 +63,8 @@ h4 {
 	border: 1px solid #ffffff;
 	margin-top: 3px;
 	margin-bottom: 5px;
+	width: 250px;
+	height: 150px;
 }
 
 .fl_image {
@@ -89,7 +91,7 @@ h4 {
 	width: 960px;
 	height: 210px;
 	margin: 0 auto;
-	background: url(images/templatemo_banner_bg.jpg) center top no-repeat;
+	background: url(images/head.jpeg) center top no-repeat;
 }
 /* end of banner */
 
@@ -104,7 +106,7 @@ h4 {
 }
 
 #templatemo_menu ul {
-	margin: 0px;
+	margin: -10px;
 	padding: 15px 0 0 10px;
 	list-style: none;
 }
@@ -118,18 +120,21 @@ h4 {
 #templatemo_menu ul li a {
 	float: left;
 	display: block;
-	padding-top: 20px;
-	padding: 0 5px;
+	padding: 10px 18px;
 	margin: 0 5px;
 	text-align: center;
 	font-size: 14px;
 	text-decoration: none;
-	color: #000000;	
-	font-weight: normal;
+	color: #ffffff;
+	font-weight: bold;
+	background: linear-gradient(180deg, #CE7520 0%, #D7A465 100%);
+	border-radius: 22px;
+	box-shadow: 0 3px 8px rgba(0,0,0,0.18);
 }
 
 #templatemo_menu li a:hover, #templatemo_menu li .current {
-	border-bottom: 1px dashed #000000;
+	border-bottom: none;
+	opacity: 0.95;
 }
 /* end of menu*/
 
@@ -171,16 +176,20 @@ h4 {
 	height: 170px;
 	bottom: -170px;
 	left: 0px;
-	background: url(images/templatemo_content_bottom.png) no-repeat;	
+	
 }
 
 #side_column {
 	float: right;
 	width: 350px;
 	padding: 10px 0 313px 0;
-	background: url(images/templatemo_image.png) bottom right no-repeat;
+
 }
 
+#side_image{
+	padding: 50px 30px 0 30px;
+	height: 500px;
+}
 .section_w480 {
 	clear: both;
 	width: 480px;
@@ -213,6 +222,46 @@ h4 {
 	clear: both;
 	padding: 10px 0;
 	text-align: left;
+}
+
+.login_box {
+	background: rgba(255, 255, 255, 0.92);
+	padding: 25px;
+	border-radius: 12px;
+	box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.login_form {
+	display: flex;
+	flex-direction: column;
+}
+
+.login_form label {
+	margin: 10px 0 5px;
+	font-weight: bold;
+}
+
+.login_form input {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 12px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	font-size: 14px;
+}
+
+.login_form button {
+	background: linear-gradient(180deg, #CE7520 0%, #D7A465 100%);
+	color: #ffffff;
+	border: none;
+	padding: 12px 0;
+	border-radius: 8px;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.login_form button:hover {
+	opacity: 0.95;
 }
 
 
